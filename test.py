@@ -33,17 +33,17 @@ class test(unittest.TestCase):
         count_phone_by_xpath("//div(include(a[text()='Популярные'])/ul/li")
         count_phone_by_xpath("//div(include(a[text()='Новинки'])/ul/li")
         wd.find_elements_by_xpath("//a[text()='Расширенный поиск->']").click()
-        check_exists_by_xpath("//a[@title='Мобильные телефоны'])
+        check_exists_by_xpath("//a[@title='Мобильные телефоны']")
         wd.find_element_by_xpath("//input[@name='glf-pricefrom-var']").send_keys("5125")
         count_price_by_text(5125)
         wd.find_element_by_xpath("//input[@name='glf-priceto-var']").send_keys("10123")
         count_price_by_text(10123)
-        if not wd.find_elements_by_xpath("//input[@id="glf-onstock-select"]).is_selected():
+        if not wd.find_elements_by_xpath("//input[@id='glf-onstock-select']").is_selected():
            wd.find_element_by_id("glf-onstock-select").click()
-        if check_exists_by_xpath("//label[text()='смартфон' or text()='телефон' or text()='телефон для детей' or text()='телефон для пожилых']):
+        if check_exists_by_xpath("//label[text()='смартфон' or text()='телефон' or text()='телефон для детей' or text()='телефон для пожилых']"):
            pass
-        else
-           wd.find_elements_by_xpath("//span[text()='Тип']).click()
+        else:
+           wd.find_elements_by_xpath("//span[text()='Тип']").click()
         if not wd.find_elements_by_xpath("//label(text()='смартфон')/preceding::[2]/span[@class='checkbox checkbox_size_s i-bem checkbox_theme_normal checkbox_js_inited checkbox_checked_yes checkbox_hovered_yes']]").is_selected():
            wd.find_elements_by_xpath("//label(text()='смартфон')/preceding-sibling::[1]/input").click()
         if not wd.find_elements_by_xpath("//label(text()='Android')/preceding::[2]/span[@class='checkbox checkbox_size_s checkbox_theme_normal i-bem checkbox_js_inited checkbox_checked_yes checkbox_hovered_yes]").is_selected():
