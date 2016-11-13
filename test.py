@@ -18,7 +18,6 @@ class test(unittest.TestCase):
     def test(self):
         success = True
         wd = self.wd
-        url = "https://market.yandex.ru/"
         wd.get("https://market.yandex.ru/")
         if not ("Маркет" in wd.find_element_by_xpath("//a[@class='logo logo_type_link logo_part_market']/span[@class='logo_text']").text):
             success = False
