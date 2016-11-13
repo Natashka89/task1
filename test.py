@@ -15,7 +15,7 @@ class test(unittest.TestCase):
         self.wd = WebDriver()
         self.wd.implicitly_wait(60)
 
-    def test_test(self):
+    def test(self):
         success = True
         wd = self.wd
         url = "https://market.yandex.ru/"
